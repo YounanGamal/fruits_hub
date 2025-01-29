@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/Core/route/page_route_name.dart';
 import 'package:fruits_hub/Feature/splash/presentation/view/widget/splash_view_body.dart';
-import 'package:fruits_hub/core/helper/page_route_name.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
