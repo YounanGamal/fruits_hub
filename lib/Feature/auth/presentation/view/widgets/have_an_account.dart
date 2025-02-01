@@ -24,7 +24,7 @@ class HaveAnAccount extends StatelessWidget
           TextSpan(
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                Navigator.pushNamed(context, PageRouteName.login);
+                Navigator.pop(context);
               },
             text: 'تسجيل دخول',
             style:

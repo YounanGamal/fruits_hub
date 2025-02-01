@@ -9,49 +9,51 @@ class SignupViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 24,
-          ),
-          CustomTextFormField(
-            hintText: 'الاسم كامل',
-            textInputType: TextInputType.text,
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          CustomTextFormField(
-            hintText: 'البريد الإلكتروني',
-            textInputType: TextInputType.text,
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          CustomTextFormField(
-            hintText: 'كلمة المرور',
-            textInputType: TextInputType.visiblePassword,
-            suffixIcon: Icon(
-              Icons.visibility,
-              color: Color(0xffC9CECF),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 24,
             ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          TermsAndCondition(),
-          SizedBox(
-            height: 33,
-          ),
-          CustomButton(
-            onPressed: () {},
-            text: 'إنشاء حساب جديد',
-          ),
-          SizedBox(height: 26,),
-          HaveAnAccount(),
-        ],
+            CustomTextFormField(
+              hintText: 'الاسم كامل',
+              textInputType: TextInputType.text,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            CustomTextFormField(
+              hintText: 'البريد الإلكتروني',
+              textInputType: TextInputType.text,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            CustomTextFormField(
+              hintText: 'كلمة المرور',
+              textInputType: TextInputType.visiblePassword,
+              suffixIcon: Icon(
+                Icons.visibility,
+                color: Color(0xffC9CECF),
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            TermsAndCondition(),
+            SizedBox(
+              height: 33,
+            ),
+            CustomButton(
+              onPressed: () {},
+              text: 'إنشاء حساب جديد',
+            ),
+            SizedBox(height: 26,),
+            HaveAnAccount(),
+          ],
+        ),
       ),
     );
   }
