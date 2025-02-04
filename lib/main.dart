@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruits_hub/Core/route/generate_routes.dart';
 import 'package:fruits_hub/Core/route/page_route_name.dart';
+import 'package:fruits_hub/Core/service/get_it_service.dart';
 import 'package:fruits_hub/Core/service/shared_preferences_singleton.dart';
 import 'package:fruits_hub/Core/theme/app_colors.dart';
 import 'package:fruits_hub/firebase_options.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'generated/l10n.dart';
 
 void main() async {
@@ -15,6 +15,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  setupGetIt();
   runApp(const FruitsHUB());
 }
 

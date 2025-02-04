@@ -3,15 +3,22 @@ import 'package:fruits_hub/Core/theme/app_text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
-      {super.key, required this.hintText, required this.textInputType, this.suffixIcon,});
+      {super.key, required this.hintText, required this.textInputType, this.suffixIcon, this.onSaved,});
 
   final Widget? suffixIcon;
   final String hintText;
   final TextInputType textInputType;
-
+ final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+        if(value==null||value.isEmpty){
+          return 'aaaa';
+        }
+        return null;
+      },
       keyboardType: textInputType,
       decoration: InputDecoration(
         hintText: hintText,
