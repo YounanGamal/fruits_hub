@@ -1,5 +1,5 @@
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
-import 'package:fruits_hub/Core/Widgets/custom_button.dart';
 import 'package:fruits_hub/Core/errors/exceptions.dart';
 import 'package:fruits_hub/Core/errors/failures.dart';
 import 'package:fruits_hub/Core/service/firebase_auth_service.dart';
@@ -24,6 +24,26 @@ class AuthRepoImpl extends AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
     } catch (e) {
+      log('Exception in  AuthRepoImpl.createUserWithEmailAndPassword : ${e.toString()}');
+      return left(
+        ServerFailure(
+          'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signinWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      var user = await firebaseAuthService.signInWithEmailAndPassword(
+          email: email, password: password);
+      return right(UserModel.fromFirebaseUser(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      log('Exception in  AuthRepoImpl.signinWithEmailAndPassword : ${e.toString()}');
       return left(
         ServerFailure(
           'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',

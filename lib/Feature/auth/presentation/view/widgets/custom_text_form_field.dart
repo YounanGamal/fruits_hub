@@ -2,20 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/Core/theme/app_text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField(
-      {super.key, required this.hintText, required this.textInputType, this.suffixIcon, this.onSaved,});
+  CustomTextFormField({
+    super.key,
+    required this.hintText,
+    required this.textInputType,
+    this.suffixIcon,
+    this.onSaved,
+    this.obscureText=false,
+  });
 
   final Widget? suffixIcon;
   final String hintText;
   final TextInputType textInputType;
- final void Function(String?)? onSaved;
+  final void Function(String?)? onSaved;
+   bool obscureText;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
       onSaved: onSaved,
       validator: (value) {
-        if(value==null||value.isEmpty){
-          return 'aaaa';
+        if (value == null || value.isEmpty) {
+          return 'هذا الحقل مطلوب';
         }
         return null;
       },
@@ -31,6 +40,12 @@ class CustomTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
           borderSide: BorderSide(
             color: Color(0xffE6E9EA),
+          ),
+        ),
+        errorBorder:OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide(
+            color: Colors.red,
           ),
         ),
         suffixIcon: suffixIcon,

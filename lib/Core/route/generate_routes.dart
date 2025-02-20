@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/Core/route/page_route_name.dart';
-import 'package:fruits_hub/Feature/auth/presentation/view/login_view.dart';
+import 'package:fruits_hub/Feature/auth/presentation/view/signin_view.dart';
 import 'package:fruits_hub/Feature/auth/presentation/view/signup_view.dart';
-import 'package:fruits_hub/Feature/onboarding/presentation/view/onBoarding_view.dart';
+import 'package:fruits_hub/Feature/on_boarding/presentation/views/on_boarding_view.dart';
 import '../../Feature/splash/presentation/view/splash_view.dart';
 
 class GenerateRoutes {
@@ -20,7 +20,7 @@ class GenerateRoutes {
         );
       case PageRouteName.login:
         return MaterialPageRoute(
-          builder: (context) => LoginView(),
+          builder: (context) => SigninView(),
           settings: settings,
         );  case PageRouteName.signup:
         return MaterialPageRoute(
