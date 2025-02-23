@@ -10,6 +10,7 @@ environment:
   sdk: ^3.6.1
 
 dependencies:
+  cloud_firestore: ^5.6.4
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   dots_indicator: ^3.0.0
@@ -48,8 +49,6 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-
-
 
   fonts:
     - family: Cairo
