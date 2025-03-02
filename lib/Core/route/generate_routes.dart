@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/Core/route/page_route_name.dart';
 import 'package:fruits_hub/Feature/auth/presentation/view/signin_view.dart';
 import 'package:fruits_hub/Feature/auth/presentation/view/signup_view.dart';
+import 'package:fruits_hub/Feature/home/presentation/view/home_view.dart';
 import 'package:fruits_hub/Feature/on_boarding/presentation/views/on_boarding_view.dart';
 import '../../Feature/splash/presentation/view/splash_view.dart';
 
@@ -22,9 +23,15 @@ class GenerateRoutes {
         return MaterialPageRoute(
           builder: (context) => SigninView(),
           settings: settings,
-        );  case PageRouteName.signup:
+        );
+      case PageRouteName.signup:
         return MaterialPageRoute(
           builder: (context) => SignupView(),
+          settings: settings,
+        );
+      case PageRouteName.home:
+        return MaterialPageRoute(
+          builder: (context) => HomeView(),
           settings: settings,
         );
       default:
